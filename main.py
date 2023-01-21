@@ -1,3 +1,4 @@
+#!./venv/bin/python
 from lib.fetch import fetch
 from lib.install import install
 from lib.update import update

@@ -1,4 +1,4 @@
-from .lib import install
+from lib.install import install
 
 
 install("setup")

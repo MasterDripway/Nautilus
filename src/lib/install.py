@@ -7,7 +7,11 @@ def install(path) -> None:
             if f == "installer.ns":
                 commands = open(root + '/' + f, 'rb').readlines()
                 print("[+] Starting installation")
+                wd = '.'
                 for c in commands:
-                    c = c.decode("utf-8")
+                    c = c.decode("utf-8").rstrip('\n')
                     print(f"[+] Running {c}")
-                    subprocess.run(c.split(" "), check=True)
+                    if c.startswith('cd'):
+                        wd = c.split(' ')[1]
+                        continue
+                    subprocess.run(c.split(" "), check=True, cwd=wd)

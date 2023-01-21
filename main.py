@@ -5,7 +5,7 @@ import os
 
 def main():
     print("[+] Starting installation")
-    with open("toolset.ns", 'rb') as items:
+    with open("setup/toolset.ns", 'rb') as items:
         for item in items:
             item = item.decode("utf-8").rstrip("\n")
             dirname = item.rstrip(".git").split('/')[-1]

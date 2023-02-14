@@ -12,6 +12,7 @@ def get_ver(path):
 def update(path):
     info = get_ver(path)
     if info[0] != info[1]:
+        print(f"[+] {info[3]} if outdated - updating.")
         try:
             subprocess.run(['mkdir', 'temp'], check=True)
         except Exception as e:

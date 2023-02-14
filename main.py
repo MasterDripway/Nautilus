@@ -4,6 +4,7 @@ from lib.install import install
 from lib.update import update
 import os
 
+#testing git
 def main():
     print("[+] Starting installation")
     with open("setup/toolset.ns", 'rb') as items:
